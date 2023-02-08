@@ -1,0 +1,25 @@
+create database company;
+
+create table positions (jobTitle Varchar(20), entrySalary double);
+
+insert INTO positions VALUES ( 'manager',5000);
+insert INTO positions VALUES ( 'team-leader',3000);
+insert INTO positions VALUES ( 'senior java dev',2500);
+insert INTO positions VALUES ( 'junior java dev',1500);
+insert INTO positions VALUES ( 'janitor',1000);
+insert INTO positions VALUES ( 'accountant',1500);
+alter table positions add PRIMARY KEY (jobTitle);
+DESCRIBE positions;
+
+create table employees ( employeeID char(10), name varchar (20), phoneNr int(8), adresse text(30),jobTitle varchar(20));
+
+insert into employees values ('E001', 'Jhon Wick', 0264333, 'Cluj-Romania', 'manager');
+alter table employees add PRIMARY key (employeeID);
+alter table employees add CONSTRAINT FOREIGN key (jobTitle) REFERENCES positions (jobTitle);
+DESCRIBE employees;
+
+create table accounting ( employeeID char(10), mounth varchar(15), hoursExtra char (2), salary double, Year int(4) );
+
+insert into accounting values ('E001','january','20',5200.5, 2022);
+alter table accounting add CONSTRAINT FOREIGN KEY (employeeID) REFERENCES employees (employeeID);
+describe accounting;
