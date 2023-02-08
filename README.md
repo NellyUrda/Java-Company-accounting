@@ -1,4 +1,5 @@
 # Java-Company-accounting
+This is a GUI desktop application using a MySql database. It has a MenuBar -Registracion and Accounting . In the Registracion menu, we can register a NEW employee to the company and VIEW all the employees. In the Accounting menu we can CALCULATE SALARY(according to the position the employee hold in the company; hours extra are calculated as well) and see ALL EMPLOYEES salaries. 
 
 ![company_accounting_1](https://user-images.githubusercontent.com/116946235/217497147-01a540a2-e677-4e00-8513-855452070cef.png)
 ![company_accounting_2](https://user-images.githubusercontent.com/116946235/217497206-d1484fa8-6c3b-4a05-93fc-8bed9d260a5a.png)
