@@ -51,8 +51,8 @@ public class AllEmployeesPage {
 
 		scrollPane2 = new JScrollPane();
 		scrollPane2.setBounds(100, 50, 600, 350);
-		employee_table = new JTable();
-		scrollPane2.setViewportView(employee_table);
+		search_employee_table = new JTable();
+		scrollPane2.setViewportView(search_employee_table);
 
 		search = new JButton("Search employee");
 		search.setBounds(150, 430, 150, 40);
@@ -97,7 +97,7 @@ public class AllEmployeesPage {
 
 			}
 			rs.next();
-			stm.close();
+			con.close();
 		} catch (Exception ex) {
 			System.out.println(ex);
 
@@ -121,7 +121,7 @@ public class AllEmployeesPage {
 								+ searchName + "';";
 						ResultSet rs = stm.executeQuery(sql);
 						ResultSetMetaData rsmd = rs.getMetaData();
-						DefaultTableModel model = (DefaultTableModel) employee_table.getModel();
+						DefaultTableModel model = (DefaultTableModel) search_employee_table.getModel();
 
 						int colNr = rsmd.getColumnCount();
 						String[] colName = new String[colNr];
@@ -141,7 +141,7 @@ public class AllEmployeesPage {
 
 						}
 						rs.next();
-						stm.close();
+						con.close();
 					} catch (Exception ex) {
 						System.out.println(ex);
 
